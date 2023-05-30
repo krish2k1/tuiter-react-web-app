@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title> Explore</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" />
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+
+	<link href="./styles.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="my-3 container explore-page">
+		<div class="row gx-5">
+			<div class="col col-xl-2 col-lg-2 col-md-3 col-2 left-column p-0">
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<td class="p-0">
+									<a class="nav-button nav-link" href="#">
+										<i class="fa-brands fa-twitter"></i>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-0">
+									<a class="nav-button nav-link" href="../home.html">
+										<i class="fas fa-home"></i>
+										<span class="nav-label d-none d-lg-inline">Home</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-0">
+									<a class="nav-button-active nav-link" href="#">
+										<i class="fas fa-hashtag"></i>
+										<span class="nav-label d-none d-lg-inline">Explore</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-0">
+									<a class="nav-button nav-link" href="../notifications.html">
+										<i class="fas fa-bell"></i>
+										<span class="nav-label d-none d-lg-inline">Notifications</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-0">
+									<a class="nav-button nav-link" href="../messages.html">
+										<i class="fas fa-envelope"></i>
+										<span class="nav-label d-none d-lg-inline">Messages</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-0">
+									<a class="nav-button nav-link" href="../bookmarks/bookmarks-css.html">
+										<i class="fas fa-bookmark"></i>
+										<span class="nav-label d-none d-lg-inline">Bookmarks</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-0">
+									<a class="nav-button nav-link" href="../lists.html">
+										<i class="fas fa-list"></i>
+										<span class="nav-label d-none d-lg-inline">Lists</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-0">
+									<a class="nav-button nav-link" href="../profile.html">
+										<i class="fas fa-user"></i>
+										<span class="nav-label d-none d-lg-inline">Profile</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-0">
+									<a class="nav-button nav-link" href="../navigation.html">
+										<i class="fas fa-ellipsis-h"></i>
+										<span class="nav-label d-none d-sm-none d-md-none d-lg-inline">More</span>
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="btn-group-vertical w-100 mt-1" role="group">
+					<button type="button" class="btn btn-primary rounded-pill">Tweet</button>
+				</div>
+			</div>
+			<div class="col col-xl-7 col-lg-7 col-md-9 col-10 center-column">
+				<div class="input-group mb-3 search-field">
+					<span class="rounded-end rounded-pill input-group-text bg-white border-end-0"><i
+							class="fas fa-search"></i></span>
+					<input type="text" class="border-start-0 form-control rounded-start rounded-pill"
+						placeholder="Search Twitter" />
+					<span class="text-primary input-group-text bg-white border-0"><i
+							class="fas fa-cog fa-xl"></i></span>
+				</div>
+				<ul class="nav nav-tabs tabs" role="tablist">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" id="for-you-tab" data-bs-toggle="tab" data-bs-target="#for-you"
+							type="button" role="tab" aria-controls="for-you" aria-selected="true">
+							For You
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="trending-tab" data-bs-toggle="tab" data-bs-target="#trending"
+							type="button" role="tab" aria-controls="trending" aria-selected="false">
+							Trending
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="news-tab" data-bs-toggle="tab" data-bs-target="#news" type="button"
+							role="tab" aria-controls="news" aria-selected="false">
+							News
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="sports-tab" data-bs-toggle="tab" data-bs-target="#sports"
+							type="button" role="tab" aria-controls="sports" aria-selected="false">
+							Sports
+						</button>
+					</li>
+					<li class="nav-item d-xl-block d-md-none d-sm-none d-none" role="presentation">
+						<button class="nav-link" id="entertainment-tab" data-bs-toggle="tab"
+							data-bs-target="#entertainment" type="button" role="tab" aria-controls="entertainment"
+							aria-selected="false">
+							Entertainment
+						</button>
+					</li>
+				</ul>
+
+				<div class="tab-content my-2">
+					<div class="tab-pane fade show active" id="for-you" role="tabpanel" aria-labelledby="for-you-tab">
+						<div class="image-mid">
+							<img src="https://techcrunch.com/wp-content/uploads/2019/09/Starship-Mk1-Day.jpg?w=1390&crop=1"
+								alt="Image" height="15%" width="100%" />
+							<div class="image-mid-caption fs-1 m-2 fw-bold">SpaceX's Starship</div>
+						</div>
+						<ul class="list-group tuit-list">
+							<li class="list-group-item">
+								<div class="row">
+									<div class="col-10">
+										<div class="fs-6 text-black-50">Web Development</div>
+										<div class="fs-5 fw-bold">
+											ReactJS <i class="fa-solid fa-circle-check"></i> <span
+												class="fs-6 text-black-50"> - 2h</span>
+										</div>
+										<div class="fs-6 fw-bold">React.js is a component based front end library that
+											makes it</div>
+										<div class="fs-6 fw-bold">very easy to build Single Page Applications or SPAs
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="">
+											<img src="https://miro.medium.com/v2/resize:fit:400/1*PWe4DmAE78BLD4SHpXizMw.png"
+												alt="Image" width="100%" class="rounded-3" />
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="row">
+									<div class="col-10">
+										<div class="fs-5 fw-bold">
+											JavaScript <i class="fa-solid fa-circle-check"></i><span
+												class="fs-6 text-black-50"> - 2h</span>
+										</div>
+										<div class="fs-6 fw-bold">JavaScript is a programming language that can run on
+											browsers</div>
+										<div class="fs-6 fw-bold">as well as desktops</div>
+										<div class="fs-6 text-black-50">123K Tweets</div>
+									</div>
+									<div class="col-2">
+										<div class="">
+											<img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+												alt="Image" width="100%" class="rounded-3" />
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="row">
+									<div class="col-10">
+										<div class="fs-6 text-black-50">Web Development</div>
+										<div class="fs-5 fw-bold">jQuery <i class="fa-solid fa-circle-check"></i></div>
+										<div class="fs-6 text-black-50">123K Tweets</div>
+									</div>
+									<div class="col-2">
+										<div class="">
+											<img src="https://w7.pngwing.com/pngs/265/442/png-transparent-jquery-octos-global-javascript-library-document-object-model-ajax-framework-text-trademark-logo-thumbnail.png"
+												alt="Image" width="100%" class="rounded-3" />
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="row">
+									<div class="col-10">
+										<div class="fs-6 text-black-50">Web Development</div>
+										<div class="fs-5 fw-bold">
+											NodeJS <i class="fa-solid fa-circle-check"></i><span
+												class="fs-6 text-black-50"> - 2h</span>
+										</div>
+										<div class="fs-6 text-black-50">123K Tweets</div>
+									</div>
+									<div class="col-2">
+										<div class="">
+											<img src="https://e7.pngegg.com/pngimages/301/171/png-clipart-node-js-javascript-software-developer-computer-icons-angularjs-others-miscellaneous-text-thumbnail.png"
+												alt="Image" width="100%" class="rounded-3" />
+										</div>
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col col-xl-3 col-lg-3 d-none d-md-none d-lg-inline d-xl-inline right-column">
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<td class="p-0">
+									<div class="who-to-follow nav-link fw-bold fs-6">Who to follow</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="pt-1">
+									<div class="who-to-follow nav-link fw-bold fs-6">
+										<div class="row gx-1">
+											<div class="col col-2">
+												<img src="https://pbs.twimg.com/profile_images/1410016948977422337/rKU8iR89_400x400.png"
+													class="rounded rounded-pill" width="100%" />
+											</div>
+											<div class="col col-7">
+												<div class="fs-6 fw-bold">&nbsp;Java&nbsp;<i
+														class="fa-solid fa-circle-check"></i></div>
+												<div class="fs-6 fw-normal">@Java</div>
+											</div>
+											<div class="col col-3">
+												<button type="button"
+													class="btn btn-primary rounded-pill">Follow</button>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="pt-1">
+									<div class="who-to-follow nav-link fw-bold fs-6">
+										<div class="row gx-1">
+											<div class="col col-2">
+												<img src="https://pbs.twimg.com/profile_images/1405603367045324801/CaXrPnKL_400x400.jpg"
+													class="rounded rounded-pill" width="100%" />
+											</div>
+											<div class="col col-7">
+												<div class="fs-6 fw-bold">&nbsp;Relativity&nbsp;<i
+														class="fa-solid fa-circle-check"></i></div>
+												<div class="fs-6 fw-normal">@relativityspace</div>
+											</div>
+											<div class="col col-3">
+												<button type="button"
+													class="btn btn-primary rounded-pill">Follow</button>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="pt-1">
+									<div class="who-to-follow nav-link fw-bold fs-6">
+										<div class="row gx-1">
+											<div class="col col-2">
+												<img src="https://pbs.twimg.com/profile_images/1565657686477344768/BLE-Gubj_400x400.jpg"
+													class="rounded rounded-pill" width="100%" />
+											</div>
+											<div class="col col-7">
+												<div class="fs-6 fw-bold">
+													&nbsp;Virgin Atlantic&nbsp;<i class="fa-solid fa-circle-check"></i>
+												</div>
+												<div class="fs-6 fw-normal">@virginatlantic</div>
+											</div>
+											<div class="col col-3">
+												<button type="button"
+													class="btn btn-primary rounded-pill">Follow</button>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="pt-1">
+									<div class="who-to-follow nav-link fw-bold fs-6">
+										<div class="row gx-1">
+											<div class="col col-2">
+												<img src="https://pbs.twimg.com/profile_images/1321163587679784960/0ZxKlEKB_400x400.jpg"
+													class="rounded rounded-pill" width="100%" />
+											</div>
+											<div class="col col-7">
+												<div class="fs-6 fw-bold">&nbsp;NASA&nbsp;<i
+														class="fa-solid fa-circle-check"></i></div>
+												<div class="fs-6 fw-normal">@nasa</div>
+											</div>
+											<div class="col col-3">
+												<button type="button"
+													class="btn btn-primary rounded-pill">Follow</button>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="pt-1">
+									<div class="who-to-follow nav-link fw-bold fs-6">
+										<div class="row gx-1">
+											<div class="col col-2">
+												<img src="https://pbs.twimg.com/profile_images/1337607516008501250/6Ggc4S5n_400x400.png"
+													class="rounded rounded-pill" width="100%" />
+											</div>
+											<div class="col col-7">
+												<div class="fs-6 fw-bold">&nbsp;TESLA&nbsp;<i
+														class="fa-solid fa-circle-check"></i></div>
+												<div class="fs-6 fw-normal">@tesla</div>
+											</div>
+											<div class="col col-3">
+												<button type="button"
+													class="btn btn-primary rounded-pill">Follow</button>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap Bundle with Popper -->
+</body>
+
+</html>

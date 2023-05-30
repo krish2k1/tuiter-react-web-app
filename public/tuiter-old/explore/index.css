@@ -1,0 +1,228 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f8fa;
+}
+
+.wd-container {
+    display: flex;
+}
+
+/* Rest of the CSS */
+
+.wd-sidebar table {
+    width: 70%;
+}
+
+.wd-sidebar table td {
+    padding: 6px;
+    border-bottom: 1px solid #e1e8ed;
+    
+}
+
+.wd-sidebar table td a {
+    color: #0d0d0d;
+    text-decoration: none;
+    
+}
+
+.wd-sidebar table td.wd-active {
+    font-weight: bold;
+}
+
+
+.wd-sidebar {
+    background-color: white;
+    width: 250px;
+    padding-top: 50px;
+    padding: 60px;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+.wd-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1;
+   
+}
+
+.wd-sidebar ul li {
+    margin-bottom: 10px;
+  
+}
+
+.wd-sidebar ul li a {
+    color: #0d0d0d;
+}
+
+.wd-sidebar ul li.wd-active a {
+    font-weight: bold;
+}
+
+.wd-content {
+    flex-grow: 1;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Search container styles */
+.wd-search-container {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    margin-bottom: 20px;
+}
+
+.wd-search-input {
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-size: 14px;
+    width: 60%;
+    background-color: #f5f8fa;
+    color: #657786;
+    flex-grow: 1;
+}
+
+.wd-settings-icon {
+    margin-left: 10px;
+}
+
+/* Tabs styles */
+.wd-tabs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.wd-tabs li {
+    margin-right: 10px;
+}
+
+.wd-tabs li a {
+    padding: 5px;
+    color: #657786;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.wd-tabs li.wd-active a {
+    border-bottom: 3px solid #1da1f2;
+}
+
+/* Image container styles */
+.wd-image-container {
+    padding-top: 1%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.wd-image-container img {
+    width: 450px;
+    height: 120px;
+}
+
+.wd-image-overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    margin: 0;
+    color: white;
+    font-size: 18px;
+}
+
+/* Tuits list styles */
+.wd-tuits-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wd-tuits-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.wd-tuit-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.wd-tuit-username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.wd-tuit-handle {
+    color: #657786;
+}
+
+.wd-tuit-content {
+    margin-bottom: 10px;
+    color: #14171a;
+}
+
+.wd-tuit-stats {
+    color: #657786;
+    font-size: 12px;
+}
+
+.wd-tuit-likes,
+.wd-tuit-retweets {
+    margin-right: 10px;
+}
+
+/* Additional styles for rounded corners */
+.wd-rounded-corners-all-around {
+    border-radius: 10px;
+}
+
+/* Previous CSS styles */
+
+/* Trending topics styles */
+.wd-trending-topics {
+    margin-top: 9px;
+    width: 450px;
+}
+
+.wd-trending-category {
+    margin-bottom: 10px;
+    color: #657786;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.wd-trending-category-name {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.wd-trending-category-dots {
+    display: inline-block;
+    margin-left: auto;
+}
+
+.wd-trending-topic {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.wd-trending-topic-name {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.wd-trending-topic-tweets {
+    display: block;
+    color: #657786;
+    font-size: 14px;
+}
