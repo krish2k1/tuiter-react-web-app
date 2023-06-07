@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaRegComment, FaRetweet } from "react-icons/fa";
-import {IoHeart} from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
 import { CiShare2 } from "react-icons/ci";
+import { AiOutlineHeart } from "react-icons/ai";
+
 
 const TuitsCount = ({ tuit }) => {
   const [liked, setLiked] = useState(tuit.liked);
@@ -34,7 +35,7 @@ const TuitsCount = ({ tuit }) => {
           className="col text-secondary text-decoration-none"
           onClick={handleLikeClick}
         >
-          {liked ? <IoHeart  /> : <FcLike />}
+          {liked ? <AiOutlineHeart  /> : <FcLike />}
           <span>{likeCount}</span>
         </a>
         <a href="#" className="col text-secondary text-decoration-none">
