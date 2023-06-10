@@ -4,7 +4,6 @@ import { FcLike } from "react-icons/fc";
 import { CiShare2 } from "react-icons/ci";
 import { AiOutlineHeart } from "react-icons/ai";
 
-
 const TuitsCount = ({ tuit }) => {
   const [liked, setLiked] = useState(tuit.liked);
   const [likeCount, setLikeCount] = useState(tuit.likes);
