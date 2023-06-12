@@ -1,46 +1,64 @@
 import { createSlice } from "@reduxjs/toolkit";
-import tuits from './tuits.json';
-
-const currentUser = {
-    "userName": "NASA",
-    "handle": "@nasa",
-    "image": "nasa.png",
+import tuits from "./tuits.json";
+import {
+  updateTuitThunk,
+  createTuitThunk,
+  deleteTuitThunk,
+  findTuitsThunk,
+} from "../services/tuits-thunks";
+const initialState = {
+  tuits: [],
+  loading: false,
 };
 
-const templateTuit = {
-    ...currentUser,
-    "topic": "Space",
-    "time": "2h",
-    "liked": true,
-    "replies": 0,
-    "retuits": 0,
-    "likes": 0,
-}
+const currentUser = {
+  userName: "NASA",
+  handle: "@nasa",
+  image: "nasa.png",
+  topic: "Space",
+  time: "2h",
+  liked: true,
+  replies: 0,
+  retuits: 0,
+  likes: 0,
+};
 
 
-const tuitsSlice = createSlice(
-    {
-        name: 'tuits',
-        initialState: tuits,
-        reducers: {
-            createTuit(state, action) {
-                // add createTuit reducer function which appends the new tuit in the payload at the beginning of the
-                // array of tuits contained in the state.
-                state.unshift({
-                    ...action.payload,
-                    ...templateTuit,
-                    _id: (new Date()).getTime(),
-                })
-            },
-            // reducer function to delete tuit looks up index of tuit from state comparing each tuit's ID
-            // with action's payload, then splices tuit from state
-            deleteTuit(state, action) {
-                const index = state.findIndex(tuit => tuit._id === action.payload);
-                state.splice(index, 1);
-            }
-        }
-    }
-);
+const tuitsSlice = createSlice({
+  name: "tuits",
+  initialState,
+  extraReducers: {
+    [updateTuitThunk.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      const tuitNdx = state.tuits.findIndex((t) => t._id === payload._id);
+      state.tuits[tuitNdx] = { ...state.tuits[tuitNdx], ...payload };
+    },
 
-export const {createTuit, deleteTuit} = tuitsSlice.actions;
+    [createTuitThunk.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      state.tuits.push(payload);
+    },
+
+    [deleteTuitThunk.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      state.tuits = state.tuits.filter((t) => t._id !== payload);
+    },
+
+    [findTuitsThunk.pending]: (state) => {
+      state.loading = true;
+      state.tuits = [];
+    },
+    [findTuitsThunk.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      state.tuits = payload;
+    },
+    [findTuitsThunk.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.error;
+    },
+  },
+  reducers: {},
+});
+
+export const { createTuit, deleteTuit } = tuitsSlice.actions;
 export default tuitsSlice.reducer;
