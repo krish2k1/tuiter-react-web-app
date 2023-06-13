@@ -15,8 +15,7 @@ import RegisterScreen from "./user/register-screen";
 
 import authReducer from "./reducers/auth-reducer";
 const store = configureStore({
-  reducer: { who: whoReducer, tuits: tuitsReducer },
-  user: authReducer,
+  reducer: { who: whoReducer, tuits: tuitsReducer, user: authReducer },
 });
 
 function Tuiter() {

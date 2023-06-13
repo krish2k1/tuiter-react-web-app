@@ -10,21 +10,21 @@ import {
 function ProfileScreen() {
   const userState = useSelector((state) => state.user);
   const currentUser = userState && userState.currentUser;
-  const [profile, setProfile] = useState({
-    firstName: "",
-    lastName: "",
-  });
+  const [profile, setProfile] = useState(currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const save = async () => {
     try {
-      console.log(profile);
       const updatedProfile = {
+        username: profile.username,
+        password:profile.password,
         firstName: profile.firstName,
         lastName: profile.lastName,
+        _id: profile._id
       };
-      await dispatch(updateUserThunk(updatedProfile));
+      await dispatch(
+        updateUserThunk(updatedProfile));
     } catch (error) {
       if (error.response && error.response.status === 409) {
         console.log("Conflict error: User already exists");

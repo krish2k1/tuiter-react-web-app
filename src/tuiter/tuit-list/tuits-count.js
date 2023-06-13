@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaRegComment, FaRetweet } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
-import { FcLike } from "react-icons/fc";
 import { CiShare2 } from "react-icons/ci";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BiDislike } from "react-icons/bi";
@@ -11,9 +10,10 @@ import { useDispatch } from "react-redux";
 const TuitsCount = ({ tuit }) => {
   const [liked, setLiked] = useState(tuit.liked);
   const [likeCount, setLikeCount] = useState(tuit.likes);
-  const [dislikes, setDisliked] = useState(tuit.dislikes);
+  const [disliked, setDisliked] = useState(tuit.disliked);
   const [dislikeCount, setDislikeCount] = useState(tuit.dislikes);
   const dispatch = useDispatch();
+
   const handleLikeClick = () => {
     if (liked) {
       setLikeCount(likeCount + 1);
@@ -25,6 +25,18 @@ const TuitsCount = ({ tuit }) => {
   };
   const LikeIcon = liked ? FaHeart : AiOutlineHeart;
   const likeColor = liked ? "red" : "";
+
+  const handledisLikeClick = () => {
+    if (disliked) {
+      setDislikeCount(dislikeCount + 1);
+    } else {
+      setDislikeCount(dislikeCount - 1);
+    }
+    setDisliked(!disliked);
+    dispatch(updateTuitThunk({ ...tuit, dislikes: dislikeCount }));
+  };
+  const DislikeIcon = disliked ? BiDislike : BiDislike;
+  const dislikeColor = disliked ? "red" : "";
   return (
     <>
       <div className="column" style={{ display: "flex", alignItems: "center" }}>
@@ -38,18 +50,19 @@ const TuitsCount = ({ tuit }) => {
           &nbsp;
           <span>{tuit.retuits}</span>
         </div>
+
         <div className="col" onClick={handleLikeClick}>
           <LikeIcon style={{ color: likeColor }} />
           &nbsp;
           <span>{tuit.likes}</span>
         </div>
-        <BiDislike
-          onClick={() =>
-            dispatch(updateTuitThunk({ ...tuit, dislikes: tuit.dislikes + 1 }))
-          }
-        />
-        &nbsp;
-        <span className="ms-2">{tuit.dislikes}</span>
+
+        <div className="col" onClick={handledisLikeClick}>
+          <DislikeIcon style={{ color: dislikeColor }} />
+          &nbsp;
+          <span>{tuit.dislikes}</span>
+        </div>
+
         <CiShare2 className="col" />
       </div>
     </>

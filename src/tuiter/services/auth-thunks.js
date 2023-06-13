@@ -18,6 +18,7 @@ export const updateUserThunk = createAsyncThunk(
   "user/updateUser",
   async (user) => {
     await authService.updateUser(user);
+    console.log(user);
     return user;
   }
 );
