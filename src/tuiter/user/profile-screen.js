@@ -17,14 +17,15 @@ function ProfileScreen() {
   const save = async () => {
     try {
       const updatedProfile = {
-        username: profile.username,
-        password:profile.password,
+        username: profile.data.username,
+        password:profile.data.password,
         firstName: profile.firstName,
         lastName: profile.lastName,
-        _id: profile._id
+        _id: profile.data._id
       };
       await dispatch(
         updateUserThunk(updatedProfile));
+        console.log("updated profile",updatedProfile);
     } catch (error) {
       if (error.response && error.response.status === 409) {
         console.log("Conflict error: User already exists");
