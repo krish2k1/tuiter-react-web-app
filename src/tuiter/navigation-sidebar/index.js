@@ -2,11 +2,9 @@ import React from "react";
 
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import {BiLogIn} from "react-icons/bi";
-import {BiUserPlus} from "react-icons/bi";
-import {CgProfile} from "react-icons/cg";
-
-
+import { BiLogIn } from "react-icons/bi";
+import { BiUserPlus } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,7 +15,6 @@ import {
   faEnvelope,
   faBookmark,
   faList,
-  faUser,
   faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -65,9 +62,24 @@ const NavigationSidebar = () => {
   return (
     <div className="list-group">
       {linkItems}
-      {!currentUser && <Link className="list-group-item" to="/tuiter/login"> <BiLogIn/>  Login   </Link>}
-     {!currentUser && <Link  className="list-group-item" to="/tuiter/register"><BiUserPlus/>Register</Link>}
-     { currentUser && <Link className="list-group-item" to="/tuiter/profile"> <CgProfile/> Profile </Link>}
+      {!currentUser && (
+        <Link className="list-group-item" to="/tuiter/login">
+          {" "}
+          <BiLogIn /> Login{" "}
+        </Link>
+      )}
+      {!currentUser && (
+        <Link className="list-group-item" to="/tuiter/register">
+          <BiUserPlus />
+          Register
+        </Link>
+      )}
+      {currentUser && (
+        <Link className="list-group-item" to="/tuiter/profile">
+          {" "}
+          <CgProfile /> Profile{" "}
+        </Link>
+      )}
 
       <p className="text-white fs-6">{ignore}</p>
 
