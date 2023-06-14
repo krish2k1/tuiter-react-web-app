@@ -8,35 +8,36 @@ import { updateTuitThunk } from "../services/tuits-thunks";
 import { useDispatch } from "react-redux";
 
 const TuitsCount = ({ tuit }) => {
-  const [liked, setLiked] = useState(tuit.liked);
+  const [isLiked, setIsLiked] = useState(tuit.liked);
   const [likeCount, setLikeCount] = useState(tuit.likes);
-  const [disliked, setDisliked] = useState(tuit.disliked);
+  const [isDisliked, setIsDisliked] = useState(tuit.disliked);
   const [dislikeCount, setDislikeCount] = useState(tuit.dislikes);
   const dispatch = useDispatch();
 
   const handleLikeClick = () => {
-    if (liked) {
-      setLikeCount(likeCount + 1);
-    } else {
-      setLikeCount(likeCount - 1);
-    }
-    setLiked(!liked);
-    dispatch(updateTuitThunk({ ...tuit, likes: likeCount }));
+    setLikeCount((prevLikeCount) => {
+      const newLikeCount = isLiked ? prevLikeCount - 1 : prevLikeCount + 1;
+      dispatch(updateTuitThunk({ ...tuit, likes: newLikeCount }));
+      return newLikeCount;
+    });
+    setIsLiked((prevIsLiked) => !prevIsLiked);
   };
-  const LikeIcon = liked ? FaHeart : AiOutlineHeart;
-  const likeColor = liked ? "red" : "";
 
   const handledisLikeClick = () => {
-    if (disliked) {
-      setDislikeCount(dislikeCount + 1);
-    } else {
-      setDislikeCount(dislikeCount - 1);
-    }
-    setDisliked(!disliked);
-    dispatch(updateTuitThunk({ ...tuit, dislikes: dislikeCount }));
+    setDislikeCount((prevDislikeCount) => {
+      const newDislikeCount = isDisliked
+        ? prevDislikeCount - 1
+        : prevDislikeCount + 1;
+      dispatch(updateTuitThunk({ ...tuit, dislikes: newDislikeCount }));
+      return newDislikeCount;
+    });
+    setIsDisliked((prevIsDisliked) => !prevIsDisliked);
   };
-  const DislikeIcon = disliked ? BiDislike : BiDislike;
-  const dislikeColor = disliked ? "red" : "";
+
+  const LikeIcon = isLiked ? FaHeart : AiOutlineHeart;
+  const likeColor = isLiked ? "red" : "";
+  const DislikeIcon = isDisliked ? BiDislike : BiDislike;
+  const dislikeColor = isDisliked ? "red" : "";
   return (
     <>
       <div className="column" style={{ display: "flex", alignItems: "center" }}>
